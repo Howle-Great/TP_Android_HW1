@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
             int columnCount = getResources().getInteger(R.integer.listColumnCount);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.fragment_container,ListFragment.newInstance(columnCount))
+                    .add(R.id.fragment_container,ListFragment.newInstance())
                     .commit();
         }
     }

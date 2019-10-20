@@ -36,11 +36,11 @@ public class InteractiveNumberList {
             );
         }
 
-        void SetValue(Integer value) {
+        void setValue(Integer value) {
             mTitle.setText(String.format(Locale.getDefault(), "%d", value));
         }
 
-        void SetTextColor(int color) {
+        void setTextColor(int color) {
             mTitle.setTextColor(color);
         }
     }
@@ -78,14 +78,14 @@ public class InteractiveNumberList {
         @Override
         public void onBindViewHolder(@NonNull NumberViewHolder holder, int position) {
             Integer data = mData.get(position);
-            holder.SetValue(data);
+            holder.setValue(data);
             switch (this.getItemViewType(position)) {
                 case TYPE_EVEN: {
-                    holder.SetTextColor(mColorTypeEven);
+                    holder.setTextColor(mColorTypeEven);
                     return;
                 }
                 case TYPE_ODD: {
-                    holder.SetTextColor(mColorTypeOdd);
+                    holder.setTextColor(mColorTypeOdd);
                     return;
                 }
                 default:

@@ -59,9 +59,7 @@ public class ListFragment extends Fragment {
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
 
                     NumberFragment fragment = NumberFragment.newInstance(value);
-                    transaction.replace(R.id.fragment_container, fragment);
-                    transaction.addToBackStack(TRANSACTION_OPEN_NUMBER_FRAGMENT);
-                    transaction.commit();
+                    transaction.replace(R.id.fragment_container, fragment).addToBackStack(TRANSACTION_OPEN_NUMBER_FRAGMENT).commit();
                 });
         mLayoutManager = new GridLayoutManager(getActivity(), columnCount);
         listView.setLayoutManager(mLayoutManager);
@@ -85,7 +83,8 @@ public class ListFragment extends Fragment {
         }
     }
 
-    public static ListFragment newInstance(int columnCount) {
+    public static ListFragment newInstance() {
+        int columnCount = 3;
         ListFragment fragment = new ListFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(COLUMN_COUNT_PARAM, columnCount);
